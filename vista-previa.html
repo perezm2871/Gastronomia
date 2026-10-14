@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sabores y cultura de República Dominicana, Ecuador, Puerto Rico y México: comida, música y tradiciones.">
+  <title>Sabores y Cultura</title>
+
+  <!-- Tipografías de Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;800&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!-- Hoja de estilos -->
+  <style>
+/* =========================================
+   SABORES Y CULTURA — Hoja de estilos
+   ========================================= */
+
+/* ----- Variables de color y tipografía ----- */
+:root {
+  --fondo: #0f0d0b;
+  --fondo-suave: #1a1714;
+  --texto: #f5efe6;
+  --texto-suave: #b9ada0;
+  --dorado: #f2b84b;
+  --naranja: #e8633a;
+  --borde: rgba(255, 255, 255, 0.08);
+
+  /* Color de acento de cada país */
+  --rd: #e63946;
+  --ec: #ffd23f;
+  --pr: #3a86ff;
+  --mx: #2a9d5c;
+
+  --titulos: "Playfair Display", Georgia, serif;
+  --cuerpo: "Poppins", Arial, sans-serif;
+}
+
+/* ----- Ajustes generales ----- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--cuerpo);
+  background-color: var(--fondo);
+  color: var(--texto);
+  line-height: 1.7;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.etiqueta {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--dorado);
+  margin-bottom: 0.6rem;
+}
+
+/* ----- Menú de navegación ----- */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5%;
+  background: rgba(15, 13, 11, 0.7);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--borde);
+}
+
+.logo {
+  font-family: var(--titulos);
+  font-size: 1.4rem;
+  font-weight: 800;
+}
+
+.logo span {
+  color: var(--naranja);
+  margin: 0 2px;
+}
+
+.navbar ul {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.navbar nav a {
+  font-size: 0.9rem;
+  color: var(--texto-suave);
+  position: relative;
+  transition: color 0.3s;
+}
+
+.navbar nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: var(--dorado);
+  transition: width 0.3s;
+}
+
+.navbar nav a:hover {
+  color: var(--texto);
+}
+
+.navbar nav a:hover::after {
+  width: 100%;
+}
+
+/* ----- Banner principal (hero) ----- */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 7rem 5% 4rem;
+  background:
+    radial-gradient(circle at 15% 25%, rgba(230, 57, 70, 0.35), transparent 40%),
+    radial-gradient(circle at 85% 20%, rgba(58, 134, 255, 0.30), transparent 40%),
+    radial-gradient(circle at 20% 85%, rgba(255, 210, 63, 0.25), transparent 40%),
+    radial-gradient(circle at 80% 85%, rgba(42, 157, 92, 0.30), transparent 40%),
+    var(--fondo);
+}
+
+.hero-contenido {
+  max-width: 800px;
+  animation: aparecer 1s ease-out;
+}
+
+.hero h1 {
+  font-family: var(--titulos);
+  font-size: clamp(2.5rem, 7vw, 5rem);
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+
+.hero h1 em {
+  font-style: italic;
+  background: linear-gradient(90deg, var(--dorado), var(--naranja));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.subtitulo {
+  font-size: 1.15rem;
+  color: var(--texto-suave);
+  max-width: 600px;
+  margin: 0 auto 2rem;
+}
+
+.banderas {
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+  font-size: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.banderas a {
+  transition: transform 0.3s;
+}
+
+.banderas a:hover {
+  transform: translateY(-8px) scale(1.15);
+}
+
+.boton {
+  display: inline-block;
+  padding: 0.9rem 2.2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  color: var(--fondo);
+  background: linear-gradient(90deg, var(--dorado), var(--naranja));
+  box-shadow: 0 10px 30px rgba(232, 99, 58, 0.35);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.boton:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px rgba(232, 99, 58, 0.5);
+}
+
+/* ----- Secciones de cada país ----- */
+.pais {
+  --acento: var(--dorado);
+  padding: 6rem 5%;
+  border-top: 1px solid var(--borde);
+  scroll-margin-top: 60px;
+}
+
+.pais:nth-child(even) {
+  background-color: var(--fondo-suave);
+}
+
+.rd { --acento: var(--rd); }
+.ec { --acento: var(--ec); }
+.pr { --acento: var(--pr); }
+.mx { --acento: var(--mx); }
+
+.pais-encabezado {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 0 auto 3rem;
+}
+
+.pais-encabezado .bandera {
+  font-size: 5rem;
+  line-height: 1;
+  filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.5));
+}
+
+.pais-encabezado .etiqueta {
+  color: var(--acento);
+}
+
+.pais h2 {
+  font-family: var(--titulos);
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  line-height: 1.15;
+  margin-bottom: 0.6rem;
+}
+
+.pais-encabezado p:last-child {
+  color: var(--texto-suave);
+  max-width: 650px;
+}
+
+/* ----- Tarjetas: Comida, Música, Tradiciones ----- */
+.tarjetas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.tarjeta {
+  position: relative;
+  padding: 2rem;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--borde);
+  overflow: hidden;
+  transition: transform 0.35s, border-color 0.35s, box-shadow 0.35s;
+}
+
+/* Línea de color arriba de cada tarjeta */
+.tarjeta::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--acento);
+}
+
+.tarjeta:hover {
+  transform: translateY(-8px);
+  border-color: var(--acento);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.icono {
+  font-size: 2.2rem;
+  margin-bottom: 0.8rem;
+}
+
+.tarjeta h3 {
+  font-family: var(--titulos);
+  font-size: 1.5rem;
+  color: var(--acento);
+  margin-bottom: 1rem;
+}
+
+.tarjeta ul {
+  list-style: none;
+}
+
+.tarjeta li {
+  padding: 0.6rem 0;
+  border-bottom: 1px dashed var(--borde);
+  color: var(--texto-suave);
+  font-size: 0.95rem;
+}
+
+.tarjeta li:last-child {
+  border-bottom: none;
+}
+
+.tarjeta strong {
+  color: var(--texto);
+  font-weight: 600;
+}
+
+/* ----- Frase final ----- */
+.cita {
+  padding: 6rem 5%;
+  text-align: center;
+  background: linear-gradient(135deg, rgba(242, 184, 75, 0.15), rgba(232, 99, 58, 0.15));
+}
+
+.cita blockquote {
+  font-family: var(--titulos);
+  font-style: italic;
+  font-size: clamp(1.5rem, 4vw, 2.4rem);
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+/* ----- Pie de página ----- */
+footer {
+  text-align: center;
+  padding: 3rem 5%;
+  border-top: 1px solid var(--borde);
+  color: var(--texto-suave);
+  font-size: 0.9rem;
+}
+
+footer .logo {
+  color: var(--texto);
+  margin-bottom: 0.5rem;
+}
+
+/* ----- Animación de entrada ----- */
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ----- Diseño adaptable (tabletas y celulares) ----- */
+@media (max-width: 800px) {
+  .navbar {
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .navbar ul {
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .navbar nav a {
+    font-size: 0.8rem;
+  }
+
+  .hero {
+    padding-top: 9rem;
+  }
+
+  .pais-encabezado {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .pais-encabezado p:last-child {
+    margin: 0 auto;
+  }
+}
+
+</style>
+</head>
+<body>
+
+  <!-- ===== MENÚ DE NAVEGACIÓN ===== -->
+  <header class="navbar">
+    <a href="#inicio" class="logo">Sabores<span>&</span>Cultura</a>
+    <nav>
+      <ul>
+        <li><a href="#rd">Rep. Dominicana</a></li>
+        <li><a href="#ecuador">Ecuador</a></li>
+        <li><a href="#pr">Puerto Rico</a></li>
+        <li><a href="#mexico">México</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ===== BANNER PRINCIPAL ===== -->
+  <section class="hero" id="inicio">
+    <div class="hero-contenido">
+      <p class="etiqueta">Un viaje gastronómico por Latinoamérica</p>
+      <h1>Sabores y cultura de <em>cuatro países</em></h1>
+      <p class="subtitulo">
+        República Dominicana, Ecuador, Puerto Rico y México: su comida, su música
+        y las tradiciones que los hacen únicos.
+      </p>
+      <div class="banderas">
+        <a href="#rd" title="República Dominicana">🇩🇴</a>
+        <a href="#ecuador" title="Ecuador">🇪🇨</a>
+        <a href="#pr" title="Puerto Rico">🇵🇷</a>
+        <a href="#mexico" title="México">🇲🇽</a>
+      </div>
+      <a href="#rd" class="boton">Comenzar el viaje ↓</a>
+    </div>
+  </section>
+
+  <main>
+
+    <!-- ===== REPÚBLICA DOMINICANA ===== -->
+    <section class="pais rd" id="rd">
+      <div class="pais-encabezado">
+        <span class="bandera">🇩🇴</span>
+        <div>
+          <p class="etiqueta">El Caribe alegre</p>
+          <h2>República Dominicana</h2>
+          <p>Tierra del merengue y la bachata, donde la comida se comparte en familia y siempre hay un plato extra para la visita.</p>
+        </div>
+      </div>
+
+      <div class="tarjetas">
+        <article class="tarjeta">
+          <div class="icono">🍽️</div>
+          <h3>Comida</h3>
+          <ul>
+            <li><strong>La Bandera:</strong> arroz blanco, habichuelas guisadas y carne.</li>
+            <li><strong>Mangú con los tres golpes:</strong> puré de plátano verde con salami, queso frito y huevo.</li>
+            <li><strong>Sancocho:</strong> caldo espeso con varias carnes y víveres.</li>
+          </ul>
+        </article>
+        <article class="tarjeta">
+          <div class="icono">🎶</div>
+          <h3>Música</h3>
+          <ul>
+            <li><strong>Merengue:</strong> el ritmo nacional, con tambora, güira y acordeón.</li>
+            <li><strong>Bachata:</strong> nacida en los barrios, hoy famosa en todo el mundo.</li>
+          </ul>
+        </article>
+        <article class="tarjeta">
+          <div class="icono">🎭</div>
+          <h3>Tradiciones</h3>
+          <ul>
+            <li><strong>Carnaval:</strong> cada febrero, con los coloridos diablos cojuelos.</li>
+            <li><strong>27 de febrero:</strong> Día de la Independencia.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== ECUADOR ===== -->
+    <section class="pais ec" id="ecuador">
+      <div class="pais-encabezado">
+        <span class="bandera">🇪🇨</span>
+        <div>
+          <p class="etiqueta">De los Andes al Pacífico</p>
+          <h2>Ecuador</h2>
+          <p>Un país de costa, sierra y selva, con una cocina tan variada como sus paisajes y raíces indígenas muy vivas.</p>
+        </div>
+      </div>
+
+      <div class="tarjetas">
+        <article class="tarjeta">
+          <div class="icono">🍽️</div>
+          <h3>Comida</h3>
+          <ul>
+            <li><strong>Encebollado:</strong> sopa de pescado con yuca y cebolla curtida.</li>
+            <li><strong>Locro de papa:</strong> crema de papa con queso y aguacate.</li>
+            <li><strong>Ceviche ecuatoriano:</strong> de camarón, servido con chifles o canguil.</li>
+          </ul>
+        </article>
+        <article class="tarjeta">
+          <div class="icono">🎶</div>
+          <h3>Música</h3>
+          <ul>
+            <li><strong>Pasillo:</strong> música romántica y nostálgica, símbolo nacional.</li>
+            <li><strong>Sanjuanito:</strong> ritmo andino alegre para bailar en fiestas.</li>
+          </ul>
+        </article>
+        <article class="tarjeta">
+          <div class="icono">🎭</div>
+          <h3>Tradiciones</h3>
+          <ul>
+            <li><strong>Inti Raymi:</strong> la Fiesta del Sol en junio.</li>
+            <li><strong>Día de los Difuntos:</strong> colada morada con guaguas de pan.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== PUERTO RICO ===== -->
+    <section class="pais pr" id="pr">
+      <div class="pais-encabezado">
+        <span class="bandera">🇵🇷</span>
+        <div>
+          <p class="etiqueta">La Isla del Encanto</p>
+          <h2>Puerto Rico</h2>
+          <p>Mezcla de herencia taína, africana y española que se siente en cada plato, cada tambor y cada parranda.</p>
+        </div>
+      </div>
+
+      <div class="tarjetas">
+        <article class="tarjeta">
+          <div class="icono">🍽️</div>
+          <h3>Comida</h3>
+          <ul>
+            <li><strong>Mofongo:</strong> plátano verde majado con ajo y chicharrón.</li>
+            <li><strong>Arroz con gandules:</strong> el plato de las fiestas.</li>
+            <li><strong>Lechón asado:</strong> cerdo asado a la varita, típico de Guavate.</li>
+          </ul>
+        </article>
+        <article class="tarjeta">
+          <div class="icono">🎶</div>
+          <h3>Música</h3>
+          <ul>
+            <li><strong>Bomba y plena:</strong> ritmos de raíz africana con panderos y barriles.</li>
+            <li><strong>Salsa y reguetón:</strong> dos géneros que la isla llevó al mundo.</li>
+          </ul>
+        </article>
+        <article class="tarjeta">
+          <div class="icono">🎭</div>
+          <h3>Tradiciones</h3>
+          <ul>
+            <li><strong>Fiestas de la Calle San Sebastián:</strong> en el Viejo San Juan, cada enero.</li>
+            <li><strong>Parrandas:</strong> asaltos navideños de casa en casa con música.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== MÉXICO ===== -->
+    <section class="pais mx" id="mexico">
+      <div class="pais-encabezado">
+        <span class="bandera">🇲🇽</span>
+        <div>
+          <p class="etiqueta">Patrimonio del mundo</p>
+          <h2>México</h2>
+          <p>Su cocina tradicional es Patrimonio Cultural Inmaterial de la UNESCO: maíz, chile y frijol con siglos de historia.</p>
+        </div>
+      </div>
+
+      <div class="tarjetas">
+        <article class="tarjeta">
+          <div class="icono">🍽️</div>
+          <h3>Comida</h3>
+          <ul>
+            <li><strong>Tacos al pastor:</strong> cerdo marinado con piña en tortilla de maíz.</li>
+            <li><strong>Mole poblano:</strong> salsa de chiles, especias y chocolate.</li>
+            <li><strong>Pozole:</strong> caldo de maíz cacahuazintle, rojo, verde o blanco.</li>
+          </ul>
+        </article>
+        <article class="tarjeta">
+          <div class="icono">🎶</div>
+          <h3>Música</h3>
+          <ul>
+            <li><strong>Mariachi:</strong> violines, trompetas y guitarrón, símbolo de México.</li>
+            <li><strong>Son jarocho:</strong> de Veracruz, con jarana y zapateado.</li>
+          </ul>
+        </article>
+        <article class="tarjeta">
+          <div class="icono">🎭</div>
+          <h3>Tradiciones</h3>
+          <ul>
+            <li><strong>Día de Muertos:</strong> altares, flor de cempasúchil y pan de muerto.</li>
+            <li><strong>Guelaguetza:</strong> gran fiesta de danzas en Oaxaca.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== FRASE FINAL ===== -->
+    <section class="cita">
+      <blockquote>
+        “Comer es una forma de viajar: cada plato cuenta la historia de su pueblo.”
+      </blockquote>
+    </section>
+
+  </main>
+
+  <!-- ===== PIE DE PÁGINA ===== -->
+  <footer>
+    <p class="logo">Sabores<span>&</span>Cultura</p>
+    <p>Proyecto de diseño digital · Hecho con HTML y CSS</p>
+    <p>&copy; 2026 Miguel Pérez Mateo</p>
+  </footer>
+
+</body>
+</html>
