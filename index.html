@@ -1,1 +1,125 @@
-README.md
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Sabores de la Cocina Caribe & Andina</title>
+    <meta name="description" content="Platos inspirados en República Dominicana, Ecuador, Puerto Rico y México — ingredientes auténticos y recetas con alma." />
+    <style>
+      :root{
+        --bg:#fffaf5;
+        --accent:#c62828;
+        --accent-2:#0b8457;
+        --muted:#5b5b5b;
+        --card:#fff;
+      }
+      *{box-sizing:border-box}
+      body{margin:0;font-family:system-ui,Arial,sans-serif;background:var(--bg);color:var(--muted)}
+      .container{width:min(1100px,calc(100% - 2rem));margin:0 auto;padding-bottom:60px}
+      header{display:flex;justify-content:space-between;align-items:center;padding:22px 0}
+      .brand{font-weight:800;color:var(--accent)}
+      nav a{margin-left:16px}
+      .hero{display:flex;gap:28px;align-items:center;padding:44px 0}
+      .hero-left{flex:1}
+      .hero-right{width:360px}
+      .btn{padding:10px 14px;border-radius:999px;font-weight:700;border:none;cursor:pointer}
+      .btn-accent{background:var(--accent);color:#fff}
+      .regions{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:22px}
+      .region{background:var(--card);padding:16px;border-radius:14px;box-shadow:0 6px 18px rgba(0,0,0,0.06)}
+      .dish{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px dashed rgba(0,0,0,0.05)}
+      .dish:last-child{border-bottom:none}
+      .map{background:linear-gradient(180deg,#ffe9df,#fff);padding:18px;border-radius:12px}
+      footer{padding:36px 0;color:var(--muted);text-align:center;margin-top:32px}
+      @media(max-width:900px){.hero{flex-direction:column}.regions{grid-template-columns:1fr}}
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="brand">Raíces y Sazón</div>
+        <nav>
+          <a href="#menu">Menú</a>
+          <a href="#regiones">Regiones</a>
+          <a href="#reservas" class="btn btn-accent">Reservar</a>
+        </nav>
+      </header>
+
+      <main>
+        <section class="hero" id="inicio">
+          <div class="hero-left">
+            <h1 style="margin:0 0 8px">Sabores caribeños y andinos</h1>
+            <p style="margin:0;color:var(--muted)">Platos tradicionales de República Dominicana, Ecuador, Puerto Rico y México reinterpretados con producto local y respeto por las recetas.</p>
+
+            <div style="margin-top:18px;display:flex;gap:10px">
+              <a class="btn btn-accent" href="#menu">Ver menú</a>
+              <a class="btn" href="#regiones">Conócenos</a>
+            </div>
+          </div>
+
+          <aside class="hero-right">
+            <div class="map">
+              <h4 style="margin:0 0 8px">Regiones destacadas</h4>
+              <p style="margin:0 0 8px;color:var(--muted)">Sabores de: República Dominicana • Ecuador • Puerto Rico • México</p>
+              <small style="color:var(--muted)">Ingredientes locales cuando es posible. Platos familiares y festivos.</small>
+            </div>
+          </aside>
+        </section>
+
+        <section id="menu" style="padding-top:18px">
+          <h2 style="margin:0 0 10px">Menú destacado</h2>
+          <div class="regions">
+            <article class="region">
+              <h3 style="margin:0 0 6px">República Dominicana</h3>
+              <div class="dish"><div><strong>Mofongo</strong><div style="font-size:0.9rem;color:var(--muted)">Plátano machacado, ajo y chicharrón</div></div><div>€14</div></div>
+              <div class="dish"><div><strong>Sancocho</strong><div style="font-size:0.9rem;color:var(--muted)">Guiso tradicional con yuca y tubérculos</div></div><div>€12</div></div>
+            </article>
+
+            <article class="region">
+              <h3 style="margin:0 0 6px">Ecuador</h3>
+              <div class="dish"><div><strong>Ceviche de camarón</strong><div style="font-size:0.9rem;color:var(--muted)">Cítricos, cilantro y maíz cancha</div></div><div>€13</div></div>
+              <div class="dish"><div><strong>Encebollado</strong><div style="font-size:0.9rem;color:var(--muted)">Sopa de pescado con yuca</div></div><div>€11</div></div>
+            </article>
+
+            <article class="region">
+              <h3 style="margin:0 0 6px">Puerto Rico</h3>
+              <div class="dish"><div><strong>Arroz con gandules</strong><div style="font-size:0.9rem;color:var(--muted)">Acompañado de pernil</div></div><div>€12</div></div>
+              <div class="dish"><div><strong>Mofongo relleno</strong><div style="font-size:0.9rem;color:var(--muted)">Con camarones al ajillo</div></div><div>€15</div></div>
+            </article>
+
+            <article class="region">
+              <h3 style="margin:0 0 6px">México</h3>
+              <div class="dish"><div><strong>Tacos al pastor</strong><div style="font-size:0.9rem;color:var(--muted)">Piña, cebolla y cilantro</div></div><div>€11</div></div>
+              <div class="dish"><div><strong>Enchiladas de mole</strong><div style="font-size:0.9rem;color:var(--muted)">Salsa de chocolate y especias</div></div><div>€13</div></div>
+            </article>
+          </div>
+        </section>
+
+        <section id="regiones" style="padding-top:28px">
+          <h2 style="margin:0 0 10px">Nuestra propuesta regional</h2>
+          <p style="color:var(--muted)">Respetamos las técnicas y sabores auténticos; trabajamos con proveedores para conseguir ingredientes representativos y los adaptamos al producto de temporada.</p>
+        </section>
+
+        <section id="reservas" style="padding-top:28px">
+          <div style="background:#fff;border-radius:12px;padding:18px;box-shadow:0 6px 18px rgba(0,0,0,0.06);max-width:700px">
+            <h3 style="margin-top:0">Reservas y eventos</h3>
+            <form onsubmit="alert('Reserva solicitada — configure backend');return false" style="display:grid;gap:10px">
+              <input placeholder="Nombre" style="padding:10px;border-radius:8px;border:1px solid #eee" required>
+              <input type="email" placeholder="Correo" style="padding:10px;border-radius:8px;border:1px solid #eee" required>
+              <div style="display:flex;gap:8px">
+                <input type="date" style="padding:10px;border-radius:8px;border:1px solid #eee" required>
+                <select style="padding:10px;border-radius:8px;border:1px solid #eee"><option>2 personas</option><option>4</option><option>6+</option></select>
+              </div>
+              <button class="btn btn-accent" type="submit" style="background:var(--accent-2);color:#fff;border:none">Reservar</button>
+            </form>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        © <span id="year"></span> Raíces y Sazón — Cocina caribeña y andina.
+      </footer>
+    </div>
+
+    <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+  </body>
+</html>
