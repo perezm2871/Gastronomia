@@ -1,125 +1,230 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Sabores de la Cocina Caribe & Andina</title>
-    <meta name="description" content="Platos inspirados en República Dominicana, Ecuador, Puerto Rico y México — ingredientes auténticos y recetas con alma." />
-    <style>
-      :root{
-        --bg:#fffaf5;
-        --accent:#c62828;
-        --accent-2:#0b8457;
-        --muted:#5b5b5b;
-        --card:#fff;
-      }
-      *{box-sizing:border-box}
-      body{margin:0;font-family:system-ui,Arial,sans-serif;background:var(--bg);color:var(--muted)}
-      .container{width:min(1100px,calc(100% - 2rem));margin:0 auto;padding-bottom:60px}
-      header{display:flex;justify-content:space-between;align-items:center;padding:22px 0}
-      .brand{font-weight:800;color:var(--accent)}
-      nav a{margin-left:16px}
-      .hero{display:flex;gap:28px;align-items:center;padding:44px 0}
-      .hero-left{flex:1}
-      .hero-right{width:360px}
-      .btn{padding:10px 14px;border-radius:999px;font-weight:700;border:none;cursor:pointer}
-      .btn-accent{background:var(--accent);color:#fff}
-      .regions{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:22px}
-      .region{background:var(--card);padding:16px;border-radius:14px;box-shadow:0 6px 18px rgba(0,0,0,0.06)}
-      .dish{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px dashed rgba(0,0,0,0.05)}
-      .dish:last-child{border-bottom:none}
-      .map{background:linear-gradient(180deg,#ffe9df,#fff);padding:18px;border-radius:12px}
-      footer{padding:36px 0;color:var(--muted);text-align:center;margin-top:32px}
-      @media(max-width:900px){.hero{flex-direction:column}.regions{grid-template-columns:1fr}}
-    </style>
-  </head>
-  <body>
-    <div class="container">
-      <header>
-        <div class="brand">Raíces y Sazón</div>
-        <nav>
-          <a href="#menu">Menú</a>
-          <a href="#regiones">Regiones</a>
-          <a href="#reservas" class="btn btn-accent">Reservar</a>
-        </nav>
-      </header>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sabores y cultura de República Dominicana, Ecuador, Puerto Rico y México: comida, música y tradiciones.">
+  <title>Sabores y Cultura</title>
 
-      <main>
-        <section class="hero" id="inicio">
-          <div class="hero-left">
-            <h1 style="margin:0 0 8px">Sabores caribeños y andinos</h1>
-            <p style="margin:0;color:var(--muted)">Platos tradicionales de República Dominicana, Ecuador, Puerto Rico y México reinterpretados con producto local y respeto por las recetas.</p>
+  <!-- Tipografías de Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;800&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
-            <div style="margin-top:18px;display:flex;gap:10px">
-              <a class="btn btn-accent" href="#menu">Ver menú</a>
-              <a class="btn" href="#regiones">Conócenos</a>
-            </div>
-          </div>
+  <!-- Hoja de estilos -->
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
 
-          <aside class="hero-right">
-            <div class="map">
-              <h4 style="margin:0 0 8px">Regiones destacadas</h4>
-              <p style="margin:0 0 8px;color:var(--muted)">Sabores de: República Dominicana • Ecuador • Puerto Rico • México</p>
-              <small style="color:var(--muted)">Ingredientes locales cuando es posible. Platos familiares y festivos.</small>
-            </div>
-          </aside>
-        </section>
+  <!-- ===== MENÚ DE NAVEGACIÓN ===== -->
+  <header class="navbar">
+    <a href="#inicio" class="logo">Sabores<span>&</span>Cultura</a>
+    <nav>
+      <ul>
+        <li><a href="#rd">Rep. Dominicana</a></li>
+        <li><a href="#ecuador">Ecuador</a></li>
+        <li><a href="#pr">Puerto Rico</a></li>
+        <li><a href="#mexico">México</a></li>
+      </ul>
+    </nav>
+  </header>
 
-        <section id="menu" style="padding-top:18px">
-          <h2 style="margin:0 0 10px">Menú destacado</h2>
-          <div class="regions">
-            <article class="region">
-              <h3 style="margin:0 0 6px">República Dominicana</h3>
-              <div class="dish"><div><strong>Mofongo</strong><div style="font-size:0.9rem;color:var(--muted)">Plátano machacado, ajo y chicharrón</div></div><div>€14</div></div>
-              <div class="dish"><div><strong>Sancocho</strong><div style="font-size:0.9rem;color:var(--muted)">Guiso tradicional con yuca y tubérculos</div></div><div>€12</div></div>
-            </article>
-
-            <article class="region">
-              <h3 style="margin:0 0 6px">Ecuador</h3>
-              <div class="dish"><div><strong>Ceviche de camarón</strong><div style="font-size:0.9rem;color:var(--muted)">Cítricos, cilantro y maíz cancha</div></div><div>€13</div></div>
-              <div class="dish"><div><strong>Encebollado</strong><div style="font-size:0.9rem;color:var(--muted)">Sopa de pescado con yuca</div></div><div>€11</div></div>
-            </article>
-
-            <article class="region">
-              <h3 style="margin:0 0 6px">Puerto Rico</h3>
-              <div class="dish"><div><strong>Arroz con gandules</strong><div style="font-size:0.9rem;color:var(--muted)">Acompañado de pernil</div></div><div>€12</div></div>
-              <div class="dish"><div><strong>Mofongo relleno</strong><div style="font-size:0.9rem;color:var(--muted)">Con camarones al ajillo</div></div><div>€15</div></div>
-            </article>
-
-            <article class="region">
-              <h3 style="margin:0 0 6px">México</h3>
-              <div class="dish"><div><strong>Tacos al pastor</strong><div style="font-size:0.9rem;color:var(--muted)">Piña, cebolla y cilantro</div></div><div>€11</div></div>
-              <div class="dish"><div><strong>Enchiladas de mole</strong><div style="font-size:0.9rem;color:var(--muted)">Salsa de chocolate y especias</div></div><div>€13</div></div>
-            </article>
-          </div>
-        </section>
-
-        <section id="regiones" style="padding-top:28px">
-          <h2 style="margin:0 0 10px">Nuestra propuesta regional</h2>
-          <p style="color:var(--muted)">Respetamos las técnicas y sabores auténticos; trabajamos con proveedores para conseguir ingredientes representativos y los adaptamos al producto de temporada.</p>
-        </section>
-
-        <section id="reservas" style="padding-top:28px">
-          <div style="background:#fff;border-radius:12px;padding:18px;box-shadow:0 6px 18px rgba(0,0,0,0.06);max-width:700px">
-            <h3 style="margin-top:0">Reservas y eventos</h3>
-            <form onsubmit="alert('Reserva solicitada — configure backend');return false" style="display:grid;gap:10px">
-              <input placeholder="Nombre" style="padding:10px;border-radius:8px;border:1px solid #eee" required>
-              <input type="email" placeholder="Correo" style="padding:10px;border-radius:8px;border:1px solid #eee" required>
-              <div style="display:flex;gap:8px">
-                <input type="date" style="padding:10px;border-radius:8px;border:1px solid #eee" required>
-                <select style="padding:10px;border-radius:8px;border:1px solid #eee"><option>2 personas</option><option>4</option><option>6+</option></select>
-              </div>
-              <button class="btn btn-accent" type="submit" style="background:var(--accent-2);color:#fff;border:none">Reservar</button>
-            </form>
-          </div>
-        </section>
-      </main>
-
-      <footer>
-        © <span id="year"></span> Raíces y Sazón — Cocina caribeña y andina.
-      </footer>
+  <!-- ===== BANNER PRINCIPAL ===== -->
+  <section class="hero" id="inicio">
+    <div class="hero-contenido">
+      <p class="etiqueta">Un viaje gastronómico por Latinoamérica</p>
+      <h1>Sabores y cultura de <em>cuatro países</em></h1>
+      <p class="subtitulo">
+        República Dominicana, Ecuador, Puerto Rico y México: su comida, su música
+        y las tradiciones que los hacen únicos.
+      </p>
+      <div class="banderas">
+        <a href="#rd" title="República Dominicana">🇩🇴</a>
+        <a href="#ecuador" title="Ecuador">🇪🇨</a>
+        <a href="#pr" title="Puerto Rico">🇵🇷</a>
+        <a href="#mexico" title="México">🇲🇽</a>
+      </div>
+      <a href="#rd" class="boton">Comenzar el viaje ↓</a>
     </div>
+  </section>
 
-    <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
-  </body>
+  <main>
+
+    <!-- ===== REPÚBLICA DOMINICANA ===== -->
+    <section class="pais rd" id="rd">
+      <div class="pais-encabezado">
+        <span class="bandera">🇩🇴</span>
+        <div>
+          <p class="etiqueta">El Caribe alegre</p>
+          <h2>República Dominicana</h2>
+          <p>Tierra del merengue y la bachata, donde la comida se comparte en familia y siempre hay un plato extra para la visita.</p>
+        </div>
+      </div>
+
+      <div class="tarjetas">
+        <article class="tarjeta">
+          <div class="icono">🍽️</div>
+          <h3>Comida</h3>
+          <ul>
+            <li><strong>La Bandera:</strong> arroz blanco, habichuelas guisadas y carne.</li>
+            <li><strong>Mangú con los tres golpes:</strong> puré de plátano verde con salami, queso frito y huevo.</li>
+            <li><strong>Sancocho:</strong> caldo espeso con varias carnes y víveres.</li>
+          </ul>
+        </article>
+        <article class="tarjeta">
+          <div class="icono">🎶</div>
+          <h3>Música</h3>
+          <ul>
+            <li><strong>Merengue:</strong> el ritmo nacional, con tambora, güira y acordeón.</li>
+            <li><strong>Bachata:</strong> nacida en los barrios, hoy famosa en todo el mundo.</li>
+          </ul>
+        </article>
+        <article class="tarjeta">
+          <div class="icono">🎭</div>
+          <h3>Tradiciones</h3>
+          <ul>
+            <li><strong>Carnaval:</strong> cada febrero, con los coloridos diablos cojuelos.</li>
+            <li><strong>27 de febrero:</strong> Día de la Independencia.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== ECUADOR ===== -->
+    <section class="pais ec" id="ecuador">
+      <div class="pais-encabezado">
+        <span class="bandera">🇪🇨</span>
+        <div>
+          <p class="etiqueta">De los Andes al Pacífico</p>
+          <h2>Ecuador</h2>
+          <p>Un país de costa, sierra y selva, con una cocina tan variada como sus paisajes y raíces indígenas muy vivas.</p>
+        </div>
+      </div>
+
+      <div class="tarjetas">
+        <article class="tarjeta">
+          <div class="icono">🍽️</div>
+          <h3>Comida</h3>
+          <ul>
+            <li><strong>Encebollado:</strong> sopa de pescado con yuca y cebolla curtida.</li>
+            <li><strong>Locro de papa:</strong> crema de papa con queso y aguacate.</li>
+            <li><strong>Ceviche ecuatoriano:</strong> de camarón, servido con chifles o canguil.</li>
+          </ul>
+        </article>
+        <article class="tarjeta">
+          <div class="icono">🎶</div>
+          <h3>Música</h3>
+          <ul>
+            <li><strong>Pasillo:</strong> música romántica y nostálgica, símbolo nacional.</li>
+            <li><strong>Sanjuanito:</strong> ritmo andino alegre para bailar en fiestas.</li>
+          </ul>
+        </article>
+        <article class="tarjeta">
+          <div class="icono">🎭</div>
+          <h3>Tradiciones</h3>
+          <ul>
+            <li><strong>Inti Raymi:</strong> la Fiesta del Sol en junio.</li>
+            <li><strong>Día de los Difuntos:</strong> colada morada con guaguas de pan.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== PUERTO RICO ===== -->
+    <section class="pais pr" id="pr">
+      <div class="pais-encabezado">
+        <span class="bandera">🇵🇷</span>
+        <div>
+          <p class="etiqueta">La Isla del Encanto</p>
+          <h2>Puerto Rico</h2>
+          <p>Mezcla de herencia taína, africana y española que se siente en cada plato, cada tambor y cada parranda.</p>
+        </div>
+      </div>
+
+      <div class="tarjetas">
+        <article class="tarjeta">
+          <div class="icono">🍽️</div>
+          <h3>Comida</h3>
+          <ul>
+            <li><strong>Mofongo:</strong> plátano verde majado con ajo y chicharrón.</li>
+            <li><strong>Arroz con gandules:</strong> el plato de las fiestas.</li>
+            <li><strong>Lechón asado:</strong> cerdo asado a la varita, típico de Guavate.</li>
+          </ul>
+        </article>
+        <article class="tarjeta">
+          <div class="icono">🎶</div>
+          <h3>Música</h3>
+          <ul>
+            <li><strong>Bomba y plena:</strong> ritmos de raíz africana con panderos y barriles.</li>
+            <li><strong>Salsa y reguetón:</strong> dos géneros que la isla llevó al mundo.</li>
+          </ul>
+        </article>
+        <article class="tarjeta">
+          <div class="icono">🎭</div>
+          <h3>Tradiciones</h3>
+          <ul>
+            <li><strong>Fiestas de la Calle San Sebastián:</strong> en el Viejo San Juan, cada enero.</li>
+            <li><strong>Parrandas:</strong> asaltos navideños de casa en casa con música.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== MÉXICO ===== -->
+    <section class="pais mx" id="mexico">
+      <div class="pais-encabezado">
+        <span class="bandera">🇲🇽</span>
+        <div>
+          <p class="etiqueta">Patrimonio del mundo</p>
+          <h2>México</h2>
+          <p>Su cocina tradicional es Patrimonio Cultural Inmaterial de la UNESCO: maíz, chile y frijol con siglos de historia.</p>
+        </div>
+      </div>
+
+      <div class="tarjetas">
+        <article class="tarjeta">
+          <div class="icono">🍽️</div>
+          <h3>Comida</h3>
+          <ul>
+            <li><strong>Tacos al pastor:</strong> cerdo marinado con piña en tortilla de maíz.</li>
+            <li><strong>Mole poblano:</strong> salsa de chiles, especias y chocolate.</li>
+            <li><strong>Pozole:</strong> caldo de maíz cacahuazintle, rojo, verde o blanco.</li>
+          </ul>
+        </article>
+        <article class="tarjeta">
+          <div class="icono">🎶</div>
+          <h3>Música</h3>
+          <ul>
+            <li><strong>Mariachi:</strong> violines, trompetas y guitarrón, símbolo de México.</li>
+            <li><strong>Son jarocho:</strong> de Veracruz, con jarana y zapateado.</li>
+          </ul>
+        </article>
+        <article class="tarjeta">
+          <div class="icono">🎭</div>
+          <h3>Tradiciones</h3>
+          <ul>
+            <li><strong>Día de Muertos:</strong> altares, flor de cempasúchil y pan de muerto.</li>
+            <li><strong>Guelaguetza:</strong> gran fiesta de danzas en Oaxaca.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== FRASE FINAL ===== -->
+    <section class="cita">
+      <blockquote>
+        “Comer es una forma de viajar: cada plato cuenta la historia de su pueblo.”
+      </blockquote>
+    </section>
+
+  </main>
+
+  <!-- ===== PIE DE PÁGINA ===== -->
+  <footer>
+    <p class="logo">Sabores<span>&</span>Cultura</p>
+    <p>Proyecto de diseño digital · Hecho con HTML y CSS</p>
+    <p>&copy; 2026 Miguel Pérez Mateo</p>
+  </footer>
+
+</body>
 </html>
